@@ -12,7 +12,7 @@ def index():
 @app.route('/doc_name/<doc>')
 def doc_name():
     #doc = request.args.get("doc")
-    return render_template('doc_name.html', title='Home - Webhook--Python', doc=doc')
+    return render_template('doc_name.html', title='Home - Webhook--Python', doc='doc')
 
 @app.route('/sent')
 def sent():
