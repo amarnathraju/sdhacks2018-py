@@ -9,10 +9,10 @@ import py_010_webhook_lib
 def index():
     return render_template('index.html', title='Home - Webhook--Python')
 
-@app.route('/doc_name', methods=['GET'])
+@app.route('/doc_name/<doc>')
 def doc_name():
-    doc = request.args.get("doc")
-    return render_template('doc_name.html', title='Doc Name - Webhook--Python', doc=doc)
+    #doc = request.args.get("doc")
+    return render_template('doc_name.html', title='Home - Webhook--Python', doc=doc')
 
 @app.route('/sent')
 def sent():
