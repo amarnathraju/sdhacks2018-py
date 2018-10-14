@@ -9,6 +9,11 @@ import py_010_webhook_lib
 def index():
     return render_template('index.html', title='Home - Webhook--Python')
 
+@app.route('/doc_name', methods=['GET'])
+def doc_name():
+    doc = request.args.get("doc")
+    return render_template('doc_name.html', title='Doc Name - Webhook--Python', doc=doc)
+
 @app.route('/sent')
 def sent():
     r = py_010_webhook_lib.send()
@@ -36,4 +41,3 @@ def not_found_error(error):
 @app.errorhandler(500)
 def internal_error(error):
     return render_template('500.html'), 500
-
